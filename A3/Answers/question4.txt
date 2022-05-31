@@ -1,0 +1,34 @@
+/*
+CMPT 125 Assignment 3 Question 4
+Author: Johann Reyes
+Student ID: 301443359
+SFU email: jra81@sfu.ca
+Academic honesty statement: I hereby confirm that this is my own work and I have
+not violated any of SFU’s Code of Academic Integrity and Good Conduct (S10.01).
+Description: This shows the calculations and steps to solve the time complexity for the Binary Search Algorithm implemeted recursively
+*/
+
+Recursive Formula: T_n = T_(n/2) + C
+Base case: T_1 = 1
+
+T_n = T_(n/2) + C
+T_(n/2) = T_(n/4) + C
+T_(n/4) = T_(n/8) + C
+.
+.
+.
+T_2 = T_1 + C
+T_1 = C = 1
+
+Therefore when you cancle out the recursion, you are left with:
+T_n = T_1 + C + C + C + ....
+
+Here, we see that T_n is T_1 plus a summations of C's. The summation starts at 0 and goes all the way up to (k-1); therefore:
+T_n = T_1 + C * (k-1)
+T_n = C + Ck - C
+T_n = Ck	C = T_1 = 1, therefore:
+T_N = k
+
+2^k = n, therefore k = log_2(n), so T_n = log_2(n)
+
+The time complexity of the Binary Search algorithm implemented recursively is log_2(n)
